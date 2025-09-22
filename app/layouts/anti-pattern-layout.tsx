@@ -24,10 +24,20 @@ export function AntiPatternLayout({
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-bold text-gray-900">
-            Next.js データフェッチ アンチパターン学習
-          </h1>
-          <p className="mt-1 text-sm text-gray-600">{title}</p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">
+                Next.js データフェッチ アンチパターン学習
+              </h1>
+              <p className="mt-1 text-sm text-gray-600">{title}</p>
+            </div>
+            <Link
+              href="/"
+              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+            >
+              🏠 ホームに戻る
+            </Link>
+          </div>
         </div>
       </header>
 
