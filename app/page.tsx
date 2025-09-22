@@ -10,9 +10,8 @@ export default function Home() {
     },
     {
       id: "02",
-      title: "過度なClient Components使用",
-      description: "インタラクティブでない部分までClient Componentsにしている",
-      disabled: true,
+      title: "データフェッチの集中化（コロケーション不足）",
+      description: "親コンポーネントで全データを取得してpropsで渡す非効率なパターン",
     },
     {
       id: "03",
