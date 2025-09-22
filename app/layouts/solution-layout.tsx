@@ -4,6 +4,11 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { useState } from "react";
 
+interface Reference {
+  link: string;
+  title: string;
+}
+
 interface SolutionLayoutProps {
   children: ReactNode;
   title: string;
@@ -12,6 +17,7 @@ interface SolutionLayoutProps {
   antiPatternLink: string;
   referenceLink?: string;
   referenceTitle?: string;
+  references?: Reference[];
 }
 
 export function SolutionLayout({
@@ -22,6 +28,7 @@ export function SolutionLayout({
   antiPatternLink,
   referenceLink,
   referenceTitle,
+  references,
 }: SolutionLayoutProps) {
   const [showBenefits, setShowBenefits] = useState(false);
 
@@ -94,23 +101,45 @@ export function SolutionLayout({
               )}
             </div>
 
-            {referenceLink && referenceTitle && (
+            {((referenceLink && referenceTitle) || references) && (
               <div className="mt-6 pt-4 border-t">
                 <h3 className="text-lg font-semibold mb-3 text-gray-800">
                   📚 参考資料
                 </h3>
                 <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
-                  <p className="text-blue-700 mb-2">
+                  <p className="text-blue-700 mb-3">
                     この実装は以下の資料に基づいています：
                   </p>
-                  <a
-                    href={referenceLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-800 underline font-medium"
-                  >
-                    {referenceTitle} →
-                  </a>
+
+                  {/* 従来の単一参考資料（後方互換性のため） */}
+                  {referenceLink && referenceTitle && !references && (
+                    <a
+                      href={referenceLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 underline font-medium"
+                    >
+                      {referenceTitle} →
+                    </a>
+                  )}
+
+                  {/* 複数の参考資料 */}
+                  {references && (
+                    <ul className="space-y-2">
+                      {references.map((ref) => (
+                        <li key={ref.link}>
+                          <a
+                            href={ref.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 underline font-medium"
+                          >
+                            {ref.title} →
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
             )}

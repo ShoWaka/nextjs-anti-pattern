@@ -15,9 +15,8 @@ export default function Home() {
     },
     {
       id: "03",
-      title: "不適切なキャッシュ戦略",
-      description: "revalidateの設定ミスやキャッシュの無効化忘れ",
-      disabled: true,
+      title: "ユーザー操作での不適切なデータフェッチ",
+      description: "Server Actionsを使うべき場面でのClient Component + useEffect使用",
     },
     {
       id: "04",
