@@ -52,6 +52,8 @@ export default function SolutionPage() {
       points={points}
       benefits={benefits}
       antiPatternLink="/anti-patterns/02"
+      referenceLink="https://zenn.dev/akfm/books/nextjs-basic-principle/viewer/part_1_colocation"
+      referenceTitle="Next.jsの考え方 - データフェッチコロケーション"
     >
       <ColocatedFetching />
     </SolutionLayout>

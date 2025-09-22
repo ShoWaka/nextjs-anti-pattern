@@ -43,6 +43,8 @@ export default function SolutionPage() {
       points={points}
       benefits={benefits}
       antiPatternLink="/anti-patterns/01"
+      referenceLink="https://zenn.dev/akfm/books/nextjs-basic-principle/viewer/part_1_server_components"
+      referenceTitle="Next.jsの考え方 - データフェッチ on Server Components"
     >
       <ServerSideFetchSuspense />
     </SolutionLayout>

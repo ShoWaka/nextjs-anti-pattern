@@ -10,6 +10,8 @@ interface SolutionLayoutProps {
   points: string[];
   benefits: string;
   antiPatternLink: string;
+  referenceLink?: string;
+  referenceTitle?: string;
 }
 
 export function SolutionLayout({
@@ -18,6 +20,8 @@ export function SolutionLayout({
   points,
   benefits,
   antiPatternLink,
+  referenceLink,
+  referenceTitle,
 }: SolutionLayoutProps) {
   const [showBenefits, setShowBenefits] = useState(false);
 
@@ -89,6 +93,27 @@ export function SolutionLayout({
                 </div>
               )}
             </div>
+
+            {referenceLink && referenceTitle && (
+              <div className="mt-6 pt-4 border-t">
+                <h3 className="text-lg font-semibold mb-3 text-gray-800">
+                  📚 参考資料
+                </h3>
+                <div className="bg-blue-50 border-l-4 border-blue-400 p-4">
+                  <p className="text-blue-700 mb-2">
+                    この実装は以下の資料に基づいています：
+                  </p>
+                  <a
+                    href={referenceLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 underline font-medium"
+                  >
+                    {referenceTitle} →
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </main>
