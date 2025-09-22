@@ -24,7 +24,10 @@ export function ServerActionSearch() {
     error: undefined,
   };
 
-  const [state, formAction, isPending] = useActionState(searchUsers, initialState);
+  const [state, formAction, isPending] = useActionState(
+    searchUsers,
+    initialState,
+  );
 
   return (
     <div className="space-y-4">
@@ -72,18 +75,20 @@ export function ServerActionSearch() {
           </p>
           <div className="space-y-2">
             {state.users.length > 0 ? (
-              state.users.map((user) => (
-                <UserCard key={user.id} user={user} />
-              ))
+              state.users.map((user) => <UserCard key={user.id} user={user} />)
             ) : (
-              <p className="text-gray-500 text-sm">該当するユーザーが見つかりませんでした</p>
+              <p className="text-gray-500 text-sm">
+                該当するユーザーが見つかりませんでした
+              </p>
             )}
           </div>
         </div>
       )}
 
       {!state.query && !isPending && (
-        <p className="text-gray-500 text-sm">ユーザー名を入力して検索してください</p>
+        <p className="text-gray-500 text-sm">
+          ユーザー名を入力して検索してください
+        </p>
       )}
     </div>
   );

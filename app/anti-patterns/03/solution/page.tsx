@@ -1,4 +1,4 @@
-import { SolutionLayout } from "@/app/layouts/solution-layout";
+import { SolutionLayout } from "@/layouts/solution-layout";
 import { ServerActionSearch } from "../_components/server-action-search";
 
 export default function SolutionPage() {

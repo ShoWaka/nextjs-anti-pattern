@@ -1,4 +1,4 @@
-import { SolutionLayout } from "@/app/layouts/solution-layout";
+import { SolutionLayout } from "@/layouts/solution-layout";
 import { ColocatedFetching } from "../_components/colocated-fetching";
 
 export default function SolutionPage() {

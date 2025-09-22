@@ -1,5 +1,5 @@
 import { ClientSideFetch } from "@/app/anti-patterns/01/_components/client-side-fetch";
-import { AntiPatternLayout } from "@/app/layouts/anti-pattern-layout";
+import { AntiPatternLayout } from "@/layouts/anti-pattern-layout";
 
 export default function Page() {
   const points = [

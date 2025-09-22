@@ -1,5 +1,5 @@
 import { ServerSideFetchSuspense } from "@/app/anti-patterns/01/_components/server-side-fetch";
-import { SolutionLayout } from "@/app/layouts/solution-layout";
+import { SolutionLayout } from "@/layouts/solution-layout";
 
 export default function SolutionPage() {
   const points = [

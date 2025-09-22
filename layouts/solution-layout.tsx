@@ -96,7 +96,9 @@ export function SolutionLayout({
               </button>
               {showBenefits && (
                 <div className="bg-green-50 border-l-4 border-green-400 p-4 animate-fadeIn">
-                  <p className="text-gray-700 whitespace-pre-line">{benefits}</p>
+                  <p className="text-gray-700 whitespace-pre-line">
+                    {benefits}
+                  </p>
                 </div>
               )}
             </div>

@@ -1,4 +1,4 @@
-import { AntiPatternLayout } from "@/app/layouts/anti-pattern-layout";
+import { AntiPatternLayout } from "@/layouts/anti-pattern-layout";
 import { ParentFetching } from "./_components/parent-fetching";
 
 export default function Page() {

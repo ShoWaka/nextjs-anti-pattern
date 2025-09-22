@@ -11,18 +11,19 @@ export default function Home() {
     {
       id: "02",
       title: "データフェッチの集中化（コロケーション不足）",
-      description: "親コンポーネントで全データを取得してpropsで渡す非効率なパターン",
+      description:
+        "親コンポーネントで全データを取得してpropsで渡す非効率なパターン",
     },
     {
       id: "03",
       title: "ユーザー操作での不適切なデータフェッチ",
-      description: "Server Actionsを使うべき場面でのClient Component + useEffect使用",
+      description:
+        "Server Actionsを使うべき場面でのClient Component + useEffect使用",
     },
     {
       id: "04",
-      title: "Waterfall問題",
-      description: "並列実行できるデータフェッチを順次実行している",
-      disabled: true,
+      title: "Server Actionsでの例外ベースエラーハンドリング",
+      description: "予測可能なエラーも例外でthrowする非効率なエラー処理",
     },
   ];
 
@@ -31,7 +32,7 @@ export default function Home() {
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-4xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">
-            Next.js データフェッチ アンチパターン学習
+            Next.js フロントエンドチーム アンチパターン勉強会
           </h1>
           <p className="mt-2 text-gray-600">
             よくある間違いを実例で学び、ベストプラクティスを身につけよう
@@ -61,9 +62,7 @@ export default function Home() {
           {antiPatterns.map((pattern) => (
             <div
               key={pattern.id}
-              className={`bg-white rounded-lg shadow-md p-6 ${
-                pattern.disabled ? "opacity-50" : "hover:shadow-lg"
-              } transition-shadow`}
+              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
@@ -78,18 +77,12 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              {!pattern.disabled ? (
-                <Link
-                  href={`/anti-patterns/${pattern.id}`}
-                  className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
-                >
-                  学習を開始 →
-                </Link>
-              ) : (
-                <span className="mt-4 inline-block bg-gray-300 text-gray-500 px-4 py-2 rounded cursor-not-allowed">
-                  準備中
-                </span>
-              )}
+              <Link
+                href={`/anti-patterns/${pattern.id}`}
+                className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+              >
+                学習を開始 →
+              </Link>
             </div>
           ))}
         </div>

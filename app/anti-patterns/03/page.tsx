@@ -1,4 +1,4 @@
-import { AntiPatternLayout } from "@/app/layouts/anti-pattern-layout";
+import { AntiPatternLayout } from "@/layouts/anti-pattern-layout";
 import { ClientComponentSearch } from "./_components/all-client-components";
 
 export default function Page() {
