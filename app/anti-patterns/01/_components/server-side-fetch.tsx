@@ -7,8 +7,11 @@ interface User {
 }
 
 async function getUsers(): Promise<User[]> {
-  const response = await fetch("http://localhost:3000/api/users",{next:{revalidate:60}});
-  return response.json();
+  const response = await fetch("http://localhost:3000/api/users", {
+    next: { revalidate: 60 },
+  });
+  const data = await response.json();
+  return data.users || data;
 }
 
 async function UserList() {

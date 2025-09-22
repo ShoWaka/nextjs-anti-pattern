@@ -41,7 +41,7 @@ export default function IntroductionPage() {
             </p>
 
             <p>
-              せっかくの機会ですので、Next.jsのベストプラクティスに則ったパフォーマンスの高いアプリケーションの構築を目指しましょう。
+              せっかくの機会ですので、Next.jsのベストプラクティスに則ったパフォーマンスの高いアプリケーションの構築を目指しましょう！
             </p>
 
             <div className="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
@@ -93,6 +93,71 @@ export default function IntroductionPage() {
                 </div>
               </li>
             </ul>
+
+            <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-8">
+              <h4 className="font-medium text-yellow-800 mb-3">
+                ⚖️ 重要な考慮点：トレードオフについて
+              </h4>
+              <div className="text-yellow-700 space-y-2">
+                <p>
+                  この資料で紹介するソリューションは、多くの場面でベストプラクティスとされる手法ですが、
+                  <strong>
+                    ありとあらゆる状況に適用できる万能な解決策ではありません
+                  </strong>
+                  。
+                </p>
+                <p>
+                  実装手法には<strong>トレードオフ</strong>
+                  が存在するものが多くあります。
+                </p>
+                <p>
+                  プロジェクトの要件、チームの技術スタック、運用環境などを総合的に考慮して、
+                  最適なアプローチを選択することが重要です。
+                </p>
+                <p>
+                  <strong>
+                    トレードオフに関しては各参照記事の最下部を確認してください。
+                  </strong>
+                </p>
+              </div>
+            </div>
+
+            <h3 className="text-xl font-semibold text-gray-800 mt-8 mb-4">
+              実装選択の指針
+            </h3>
+
+            <div className="bg-gray-50 rounded-lg p-4 mb-6">
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>
+                    <strong>Server Components</strong>:
+                    SEOが重要で、静的コンテンツが多い場合
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>
+                    <strong>Client Components</strong>:
+                    リアルタイム更新や複雑なUIインタラクションが必要な場合
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>
+                    <strong>Server Actions</strong>:
+                    フォーム送信やデータ変更操作がメインの場合
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">•</span>
+                  <span>
+                    <strong>データコロケーション</strong>:
+                    コンポーネントの独立性と再利用性を重視する場合
+                  </span>
+                </li>
+              </ul>
+            </div>
 
             <div className="text-center mt-8">
               <Link

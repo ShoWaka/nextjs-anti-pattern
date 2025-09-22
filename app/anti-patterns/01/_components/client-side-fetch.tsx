@@ -13,12 +13,19 @@ export function ClientSideFetch() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/users")
-      .then((res) => res.json())
-      .then((data) => {
-        setUsers(data);
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/api/users");
+        const data = await response.json();
+        setUsers(data.users || data);
         setLoading(false);
-      });
+      } catch (error) {
+        console.error("Failed to fetch users:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchUsers();
   }, []);
 
   if (loading) {
