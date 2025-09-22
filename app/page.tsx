@@ -42,7 +42,24 @@ export default function Home() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="mb-6">
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">
+              📖 学習を始める前に
+            </h2>
+            <p className="text-gray-600 mb-4">
+              この資料の背景や学習方法について理解を深めることで、より効果的に学習を進めることができます。
+            </p>
+            <Link
+              href="/introduction"
+              className="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors"
+            >
+              前書きを読む →
+            </Link>
+          </div>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2">
           {antiPatterns.map((pattern) => (
             <div
               key={pattern.id}
@@ -50,21 +67,23 @@ export default function Home() {
                 pattern.disabled ? "opacity-50" : "hover:shadow-lg"
               } transition-shadow`}
             >
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between mb-4">
                 <div className="flex-1">
-                  <h2 className="text-xl font-semibold text-gray-800 mb-2">
+                  <h2 className="text-xl font-semibold text-gray-800 mb-3">
                     パターン #{pattern.id}
                   </h2>
-                  <h3 className="text-lg font-medium text-gray-700 mb-2">
+                  <h3 className="text-lg font-medium text-gray-700 mb-3">
                     {pattern.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{pattern.description}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {pattern.description}
+                  </p>
                 </div>
               </div>
               {!pattern.disabled ? (
                 <Link
                   href={`/anti-patterns/${pattern.id}`}
-                  className="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+                  className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
                 >
                   学習を開始 →
                 </Link>
