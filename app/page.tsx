@@ -86,6 +86,39 @@ export default function Home() {
             </div>
           ))}
         </div>
+
+        <div className="mt-8">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg shadow-md p-6 border border-blue-200">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+              <span className="text-2xl mr-2">📝</span>
+              理解度チェック
+            </h2>
+            <p className="text-gray-700 mb-4">
+              学習を終えた後は、理解度を確認するためのアンケートにご協力ください。
+              あなたの理解度を把握し、今後の学習に役立てることができます。
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="https://forms.gle/1G9HdiQWDPvzek6W8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition-colors"
+              >
+                {/** biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+                <svg
+                  className="w-4 h-4 mr-2"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                  <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+                </svg>
+                理解度アンケートに回答する
+              </Link>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
