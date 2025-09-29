@@ -30,7 +30,8 @@ export async function ParentFetching() {
   const response = await fetch("http://localhost:3000/api/users", {
     cache: "no-store",
   });
-  const users: User[] = await response.json();
+  const data = await response.json();
+  const users: User[] = data.users || data;
 
   return (
     <div className="space-y-4">

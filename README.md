@@ -51,7 +51,7 @@ http://localhost:3000 でアプリケーションにアクセスできます。
 
 ## 🛠 技術スタック
 
-- **Next.js 14+** (App Router)
+- **Next.js 15+** (App Router)
 - **TypeScript**
 - **Tailwind CSS**
 - **Biome** (Linter & Formatter)

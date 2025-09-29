@@ -45,6 +45,8 @@ export default function SolutionPage() {
       antiPatternLink="/anti-patterns/01"
       referenceLink="https://zenn.dev/akfm/books/nextjs-basic-principle/viewer/part_1_server_components"
       referenceTitle="Next.jsの考え方 - データフェッチ on Server Components"
+      nextPatternLink="/anti-patterns/02"
+      nextPatternTitle="パターン #02: データフェッチの集中化"
     >
       <ServerSideFetchSuspense />
     </SolutionLayout>

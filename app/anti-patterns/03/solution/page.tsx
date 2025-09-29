@@ -61,6 +61,8 @@ export default function SolutionPage() {
           title: "Next.jsの考え方 - データ操作とServer Actions",
         },
       ]}
+      nextPatternLink="/anti-patterns/04"
+      nextPatternTitle="パターン #04: Server Actionsでの例外ベースエラーハンドリング"
     >
       <ServerActionSearch />
     </SolutionLayout>

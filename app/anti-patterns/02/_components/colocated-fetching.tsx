@@ -12,7 +12,8 @@ async function AllUsersList() {
   const response = await fetch("http://localhost:3000/api/users", {
     next: { revalidate: 60 },
   });
-  const users: User[] = await response.json();
+  const data = await response.json();
+  const users: User[] = data.users || data;
 
   return (
     <div className="border rounded-lg p-4 bg-white shadow-sm">
@@ -33,7 +34,8 @@ async function RecentUsersList() {
   const response = await fetch("http://localhost:3000/api/users", {
     next: { revalidate: 60 },
   });
-  const users: User[] = await response.json();
+  const data = await response.json();
+  const users: User[] = data.users || data;
   const recentUsers = users.slice(0, 2);
 
   return (
@@ -55,7 +57,8 @@ async function FilteredUsersList() {
   const response = await fetch("http://localhost:3000/api/users", {
     next: { revalidate: 60 },
   });
-  const users: User[] = await response.json();
+  const data = await response.json();
+  const users: User[] = data.users || data;
   const filteredUsers = users.filter((u) => u.email.includes("example.com"));
 
   return (
@@ -77,7 +80,8 @@ async function LatestUsersList() {
   const response = await fetch("http://localhost:3000/api/users", {
     next: { revalidate: 60 },
   });
-  const users: User[] = await response.json();
+  const data = await response.json();
+  const users: User[] = data.users || data;
   const latestUsers = users.slice(-2);
 
   return (

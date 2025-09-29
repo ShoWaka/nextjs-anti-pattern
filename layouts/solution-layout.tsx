@@ -18,6 +18,8 @@ interface SolutionLayoutProps {
   referenceLink?: string;
   referenceTitle?: string;
   references?: Reference[];
+  nextPatternLink?: string;
+  nextPatternTitle?: string;
 }
 
 export function SolutionLayout({
@@ -29,6 +31,8 @@ export function SolutionLayout({
   referenceLink,
   referenceTitle,
   references,
+  nextPatternLink,
+  nextPatternTitle,
 }: SolutionLayoutProps) {
   const [showBenefits, setShowBenefits] = useState(false);
 
@@ -143,6 +147,21 @@ export function SolutionLayout({
                     </ul>
                   )}
                 </div>
+              </div>
+            )}
+
+            {nextPatternLink && nextPatternTitle && (
+              <div className="mt-6 pt-4 border-t">
+                <h3 className="text-lg font-semibold mb-3 text-gray-800">
+                  次の学習へ
+                </h3>
+                <Link
+                  href={nextPatternLink}
+                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                >
+                  <span className="mr-2">→</span>
+                  {nextPatternTitle}
+                </Link>
               </div>
             )}
           </div>

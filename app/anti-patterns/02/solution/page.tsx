@@ -54,6 +54,8 @@ export default function SolutionPage() {
       antiPatternLink="/anti-patterns/02"
       referenceLink="https://zenn.dev/akfm/books/nextjs-basic-principle/viewer/part_1_colocation"
       referenceTitle="Next.jsの考え方 - データフェッチコロケーション"
+      nextPatternLink="/anti-patterns/03"
+      nextPatternTitle="パターン #03: ユーザー操作での不適切なデータフェッチ"
     >
       <ColocatedFetching />
     </SolutionLayout>
